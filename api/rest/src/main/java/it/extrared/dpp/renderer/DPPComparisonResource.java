@@ -28,10 +28,9 @@ import org.jboss.resteasy.reactive.RestResponse;
 public interface DPPComparisonResource {
 
     /**
-     * Endpoint to issue a comparison a request.
-     *
-     * @param comparisonRequest th
-     * @return
+     * Issue a comparison request.
+     * @param comparisonRequest the dto with the comparison request endpoints, logical field names and paths.
+     * @return the fields extracted from the DPPs retrieved from the provided endpoints as a {@link ComparisonResult}.
      */
     @Operation(
             summary = "Perform a comparison operation.",
