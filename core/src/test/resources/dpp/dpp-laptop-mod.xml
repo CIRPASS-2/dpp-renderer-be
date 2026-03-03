@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:dpp="http://dpp.taltech.ee/MODDPP#"
+        xmlns:si="https://si-digital-framework.org/SI#">
+
+  <!-- Item: Laptop -->
+  <dpp:Item rdf:about="http://example.com/product/laptop-002">
+    <dpp:itemUID>urn:epc:id:sgtin:0614141.223456.002</dpp:itemUID>
+    <dpp:itemName>TechBook Pro 15</dpp:itemName>
+    <dpp:itemDescription>Laptop professionale ad alte prestazioni con certificazione Energy Star</dpp:itemDescription>
+    <dpp:globalTradeNumber>8723456789012</dpp:globalTradeNumber>
+    <dpp:tariffCode>8471300000</dpp:tariffCode>
+    <dpp:isEnergyImpacting rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dpp:isEnergyImpacting>
+    <dpp:itemPhoto rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://example.com/images/laptop-002.jpg</dpp:itemPhoto>
+
+    <!-- Category Code -->
+    <dpp:belongsToProductFamily>
+      <dpp:CategoryCode rdf:about="http://example.com/classification/laptops">
+        <dpp:categoryCodeScheme rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ec.europa.eu/growth/tools-databases/tbt/</dpp:categoryCodeScheme>
+        <dpp:categoryCodeValue>ELEC-COMP-LAPTOP</dpp:categoryCodeValue>
+      </dpp:CategoryCode>
+    </dpp:belongsToProductFamily>
+
+    <dpp:hasProducer rdf:resource="http://example.com/actor/manufacturer-delta"/>
+    <dpp:hasResponsibleOperator rdf:resource="http://example.com/actor/operator-epsilon"/>
+
+    <!-- Digital Passport -->
+    <dpp:ownsPassport>
+      <dpp:DigitalPassport rdf:about="http://example.com/dpp/laptop-002-dpp">
+        <dpp:passportURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">urn:uuid:b2c3d4e5-f6a7-5b6c-9d0e-1f2a3b4c5d6e</dpp:passportURI>
+        <dpp:recordLevel>batch</dpp:recordLevel>
+        <dpp:lifecycleState>Active</dpp:lifecycleState>
+        <dpp:specificationVersion>1.7.0</dpp:specificationVersion>
+        <dpp:effectiveFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-03-10T09:00:00Z</dpp:effectiveFrom>
+        <dpp:expiresOn rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2034-03-10T09:00:00Z</dpp:expiresOn>
+        <dpp:modifiedAt rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTimeStamp">2024-12-01T16:45:00Z</dpp:modifiedAt>
+        <dpp:siteIdentifier>FAC-DE-BER-002</dpp:siteIdentifier>
+        <dpp:hasRegistrar rdf:resource="http://example.com/actor/issuer-zeta"/>
+        <dpp:hasMirrorHost rdf:resource="http://example.com/actor/backup-host-001"/>
+      </dpp:DigitalPassport>
+    </dpp:ownsPassport>
+
+    <!-- Attributes -->
+    <dpp:hasAttribute>
+      <dpp:ItemWeight rdf:about="http://example.com/property/weight-002">
+        <dpp:dataPointReference>https://example.com/dict/weight</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1850.0</dpp:quantity>
+        <dpp:permittedVariation rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</dpp:permittedVariation>
+        <dpp:hasUnit rdf:resource="si:gram"/>
+      </dpp:ItemWeight>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:ItemLength rdf:about="http://example.com/property/length-002">
+        <dpp:dataPointReference>https://example.com/dict/length</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">357.0</dpp:quantity>
+        <dpp:permittedVariation rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</dpp:permittedVariation>
+        <dpp:hasUnit rdf:resource="si:millimeter"/>
+      </dpp:ItemLength>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:ItemWidth rdf:about="http://example.com/property/width-002">
+        <dpp:dataPointReference>https://example.com/dict/width</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">245.0</dpp:quantity>
+        <dpp:permittedVariation rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</dpp:permittedVariation>
+        <dpp:hasUnit rdf:resource="si:millimeter"/>
+      </dpp:ItemWidth>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:ItemHeight rdf:about="http://example.com/property/height-002">
+        <dpp:dataPointReference>https://example.com/dict/height</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18.5</dpp:quantity>
+        <dpp:permittedVariation rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.5</dpp:permittedVariation>
+        <dpp:hasUnit rdf:resource="si:millimeter"/>
+      </dpp:ItemHeight>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:GHGFootprint rdf:about="http://example.com/property/carbon-footprint-002">
+        <dpp:dataPointReference>https://example.com/dict/carbon-footprint</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">320.5</dpp:quantity>
+        <dpp:hasUnit rdf:resource="si:kilogram-co2-equivalent"/>
+      </dpp:GHGFootprint>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:PowerDraw rdf:about="http://example.com/property/energy-consumption-002">
+        <dpp:dataPointReference>https://example.com/dict/energy-consumption</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">65.0</dpp:quantity>
+        <dpp:hasUnit rdf:resource="si:watt"/>
+      </dpp:PowerDraw>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:SecondaryMaterialUse rdf:about="http://example.com/property/recycled-materials-002">
+        <dpp:dataPointReference>https://example.com/dict/recycled-materials</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45.0</dpp:quantity>
+        <dpp:hasUnit rdf:resource="si:percent"/>
+      </dpp:SecondaryMaterialUse>
+    </dpp:hasAttribute>
+
+    <dpp:hasAttribute>
+      <dpp:MeanTimeBetweenFailures rdf:about="http://example.com/property/reliability-002">
+        <dpp:dataPointReference>https://example.com/dict/reliability</dpp:dataPointReference>
+        <dpp:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50000.0</dpp:quantity>
+        <dpp:hasUnit rdf:resource="si:hour"/>
+      </dpp:MeanTimeBetweenFailures>
+    </dpp:hasAttribute>
+
+    <!-- Packaging Info -->
+    <dpp:hasPackagingInfo>
+      <dpp:PackagingInfo rdf:about="http://example.com/packaging/laptop-002">
+        <dpp:containerType>Molded fiber packaging with recycled content</dpp:containerType>
+        <dpp:packagingDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-11-25T14:20:00Z</dpp:packagingDate>
+      </dpp:PackagingInfo>
+    </dpp:hasPackagingInfo>
+
+    <!-- Hazardous Substances -->
+    <dpp:includesHazardousSubstance rdf:resource="http://example.com/soc/lead-solder"/>
+    <dpp:includesHazardousSubstance rdf:resource="http://example.com/soc/lithium-ion-battery"/>
+  </dpp:Item>
+
+</rdf:RDF>

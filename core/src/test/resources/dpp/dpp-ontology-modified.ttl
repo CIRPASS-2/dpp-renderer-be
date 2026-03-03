@@ -1,0 +1,482 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dpp.taltech.ee/MODDPP>
+  a owl:Ontology ;
+  dcterms:title "The Product and DPP module of an EU DPP core ontology proposed by the CIRPASS-2 project."@en ;
+  owl:versionInfo "1.7.0" .
+
+dcterms:contributor a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:issued a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+dcterms:modified a owl:AnnotationProperty .
+dcterms:title a owl:AnnotationProperty .
+skos:exactMatch a owl:AnnotationProperty .
+
+<http://dpp.taltech.ee/MODDPP#linkedToItem>
+  a owl:ObjectProperty ;
+  owl:inverseOf <http://dpp.taltech.ee/MODDPP#ownsPassport> ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:label "Linked to item"@en .
+
+<http://dpp.taltech.ee/MODDPP#includesHazardousSubstance>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:label "Includes hazardous substance"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasMirrorHost>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:label "Has mirror host"@en .
+
+<http://dpp.taltech.ee/MODDPP#ownsPassport>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:label "Owns passport"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasResponsibleOperator>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:label "Has responsible operator"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasRegistrar>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:label "Has registrar"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasProducer>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:label "Has producer"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasUnit>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:range <https://si-digital-framework.org/SI#MeasurementUnit> ;
+  rdfs:label "Has unit"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasPackagingInfo>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#PackagingInfo> ;
+  rdfs:label "Has packaging info"@en .
+
+<http://dpp.taltech.ee/MODDPP#belongsToProductFamily>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#CategoryCode> ;
+  rdfs:label "Belongs to product family"@en .
+
+<http://dpp.taltech.ee/MODDPP#hasAttribute>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#Attribute> ;
+  rdfs:label "Has attribute"@en .
+
+<http://dpp.taltech.ee/MODDPP#isPartOf>
+  a owl:ObjectProperty, owl:TransitiveProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:label "Is part of"@en .
+
+<http://dpp.taltech.ee/MODDPP#isReplacementFor>
+  a owl:ObjectProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:label "Is replacement for"@en .
+
+<http://dpp.taltech.ee/MODDPP#globalTradeNumber>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Global trade number"@en .
+
+<http://dpp.taltech.ee/MODDPP#categoryCodeScheme>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#CategoryCode> ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Category code scheme"@en .
+
+<http://dpp.taltech.ee/MODDPP#categoryCodeValue>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#CategoryCode> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Category code value"@en .
+
+<http://dpp.taltech.ee/MODDPP#tariffCode>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Tariff code"@en .
+
+<http://dpp.taltech.ee/MODDPP#mimeType>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Attachment> ;
+  rdfs:range xsd:string ;
+  rdfs:label "MIME type"@en .
+
+<http://dpp.taltech.ee/MODDPP#itemDescription>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Item description"@en .
+
+<http://dpp.taltech.ee/MODDPP#dataPointReference>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Attribute> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Data point reference"@en .
+
+<http://dpp.taltech.ee/MODDPP#siteIdentifier>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Site identifier"@en .
+
+<http://dpp.taltech.ee/MODDPP#recordLevel>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range [
+    a rdfs:Datatype ;
+    owl:oneOf ("batch" "model" "unit")
+  ] ;
+  rdfs:label "Record level"@en .
+
+<http://dpp.taltech.ee/MODDPP#isEnergyImpacting>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "Is energy impacting"@en .
+
+<http://dpp.taltech.ee/MODDPP#modifiedAt>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:dateTimeStamp ;
+  rdfs:label "Modified at"@en .
+
+<http://dpp.taltech.ee/MODDPP#predecessorPassportLink>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Predecessor passport link"@en .
+
+<http://dpp.taltech.ee/MODDPP#quantity>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "Quantity"@en .
+
+<http://dpp.taltech.ee/MODDPP#packagingDate>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#PackagingInfo> ;
+  rdfs:range xsd:dateTime ;
+  rdfs:label "Packaging date"@en .
+
+<http://dpp.taltech.ee/MODDPP#containerType>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#PackagingInfo> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Container type"@en .
+
+<http://dpp.taltech.ee/MODDPP#itemPhoto>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Item photo"@en .
+
+<http://dpp.taltech.ee/MODDPP#itemName>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Item name"@en .
+
+<http://dpp.taltech.ee/MODDPP#specificationVersion>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Specification version"@en .
+
+<http://dpp.taltech.ee/MODDPP#lifecycleState>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range [
+    a rdfs:Datatype ;
+    owl:oneOf ("Active" "Archived")
+  ] ;
+  rdfs:label "Lifecycle state"@en .
+
+<http://dpp.taltech.ee/MODDPP#permittedVariation>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:range xsd:double ;
+  rdfs:label "Permitted variation"@en .
+
+<http://dpp.taltech.ee/MODDPP#passportURI>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Passport URI"@en .
+
+<http://dpp.taltech.ee/MODDPP#itemUID>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Item> ;
+  rdfs:range [
+    a rdfs:Datatype ;
+    owl:unionOf (xsd:anyURI xsd:string)
+  ] ;
+  rdfs:label "Item UID"@en .
+
+<http://dpp.taltech.ee/MODDPP#effectiveFrom>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:dateTimeStamp ;
+  rdfs:label "Effective from"@en .
+
+<http://dpp.taltech.ee/MODDPP#expiresOn>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#DigitalPassport> ;
+  rdfs:range xsd:dateTimeStamp ;
+  rdfs:label "Expires on"@en .
+
+<http://dpp.taltech.ee/MODDPP#attachmentPayload>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#Attachment> ;
+  rdfs:range xsd:string ;
+  rdfs:label "Attachment payload"@en .
+
+<http://dpp.taltech.ee/MODDPP#instructionURL>
+  a owl:DatatypeProperty ;
+  rdfs:domain <http://dpp.taltech.ee/MODDPP#UserManual> ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Instruction URL"@en .
+
+<http://dpp.taltech.ee/MODDPP#GHGFootprint>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EcoFootprint> ;
+  rdfs:label "GHG footprint"@en .
+
+<http://dpp.taltech.ee/MODDPP#CircularityMetric>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Circularity metric"@en .
+
+<http://dpp.taltech.ee/MODDPP#CategoryCode>
+  a owl:Class ;
+  rdfs:label "Category code"@en .
+
+<http://dpp.taltech.ee/MODDPP#SubstanceConcentration>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Substance concentration"@en .
+
+<http://dpp.taltech.ee/MODDPP#DigitalPassport>
+  a owl:Class ;
+  rdfs:label "Digital Passport"@en .
+
+<http://dpp.taltech.ee/MODDPP#UserManual>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#Attachment> ;
+  rdfs:label "User manual"@en .
+
+<http://dpp.taltech.ee/MODDPP#Attachment>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#Attribute> ;
+  rdfs:label "Attachment"@en .
+
+<http://dpp.taltech.ee/MODDPP#AirPollution>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EnvironmentalRelease> ;
+  rdfs:label "Air pollution"@en .
+
+<http://dpp.taltech.ee/MODDPP#SoilPollution>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EnvironmentalRelease> ;
+  rdfs:label "Soil pollution"@en .
+
+<http://dpp.taltech.ee/MODDPP#WaterPollution>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EnvironmentalRelease> ;
+  rdfs:label "Water pollution"@en .
+
+<http://dpp.taltech.ee/MODDPP#PowerDraw>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#NaturalResourceUse> ;
+  rdfs:label "Power draw"@en .
+
+<http://dpp.taltech.ee/MODDPP#EnvironmentalRelease>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EnvironmentalImpact> ;
+  rdfs:label "Environmental release"@en .
+
+<http://dpp.taltech.ee/MODDPP#EcoFootprint>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Eco footprint"@en .
+
+<http://dpp.taltech.ee/MODDPP#ToxicWasteVolume>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#WasteVolume> ;
+  rdfs:label "Toxic waste volume"@en .
+
+<http://dpp.taltech.ee/MODDPP#ItemHeight>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PhysicalDimension> ;
+  rdfs:label "Item height"@en .
+
+<http://dpp.taltech.ee/MODDPP#TerrainUse>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#NaturalResourceUse> ;
+  rdfs:label "Terrain use"@en .
+
+<http://dpp.taltech.ee/MODDPP#ItemLength>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PhysicalDimension> ;
+  rdfs:label "Item length"@en .
+
+<http://dpp.taltech.ee/MODDPP#RawMaterialFootprint>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EcoFootprint> ;
+  rdfs:label "Raw material footprint"@en .
+
+<http://dpp.taltech.ee/MODDPP#MicroplasticEmission>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PlasticEmission> ;
+  rdfs:label "Microplastic emission"@en .
+
+<http://dpp.taltech.ee/MODDPP#NanoplasticEmission>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PlasticEmission> ;
+  rdfs:label "Nanoplastic emission"@en .
+
+<http://dpp.taltech.ee/MODDPP#PackagingInfo>
+  a owl:Class ;
+  rdfs:label "Packaging info"@en .
+
+<http://dpp.taltech.ee/MODDPP#PackagingWasteVolume>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#WasteVolume> ;
+  rdfs:label "Packaging waste volume"@en .
+
+<http://dpp.taltech.ee/MODDPP#PlasticEmission>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#EnvironmentalImpact> ;
+  rdfs:label "Plastic emission"@en .
+
+<http://dpp.taltech.ee/MODDPP#Item>
+  a owl:Class ;
+  rdfs:label "Item"@en ;
+  skos:exactMatch "schema:Product" .
+
+<http://dpp.taltech.ee/MODDPP#PhysicalDimension>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Physical dimension"@en .
+
+<http://dpp.taltech.ee/MODDPP#PackagingRatio>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Packaging ratio"@en .
+
+<http://dpp.taltech.ee/MODDPP#Attribute>
+  a owl:Class ;
+  rdfs:label "Attribute"@en .
+
+<http://dpp.taltech.ee/MODDPP#PerformanceIndicator>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Performance indicator"@en .
+
+<http://dpp.taltech.ee/MODDPP#MeasurableAttribute>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#Attribute> ;
+  rdfs:label "Measurable attribute"@en .
+
+<http://dpp.taltech.ee/MODDPP#RecoveryRate>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#CircularityMetric> ;
+  rdfs:label "Recovery rate"@en .
+
+<http://dpp.taltech.ee/MODDPP#SecondaryMaterialUse>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#NaturalResourceUse> ;
+  rdfs:label "Secondary material use"@en .
+
+<http://dpp.taltech.ee/MODDPP#CollectionRate>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#CircularityMetric> ;
+  rdfs:label "Collection rate"@en .
+
+<http://dpp.taltech.ee/MODDPP#ReuseRate>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#CircularityMetric> ;
+  rdfs:label "Reuse rate"@en .
+
+<http://dpp.taltech.ee/MODDPP#MeanTimeBetweenFailures>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PerformanceIndicator> ;
+  rdfs:label "Mean time between failures"@en .
+
+<http://dpp.taltech.ee/MODDPP#NaturalResourceUse>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Natural resource use"@en .
+
+<http://dpp.taltech.ee/MODDPP#RenewableMaterialUse>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#NaturalResourceUse> ;
+  rdfs:label "Renewable material use"@en .
+
+<http://dpp.taltech.ee/MODDPP#SubstanceThreshold>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Substance threshold"@en .
+
+<http://dpp.taltech.ee/MODDPP#ItemVolume>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PhysicalDimension> ;
+  rdfs:label "Item volume"@en .
+
+<http://dpp.taltech.ee/MODDPP#WasteVolume>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Waste volume"@en .
+
+<http://dpp.taltech.ee/MODDPP#WaterDraw>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#NaturalResourceUse> ;
+  rdfs:label "Water draw"@en .
+
+<http://dpp.taltech.ee/MODDPP#ItemWeight>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PhysicalDimension> ;
+  rdfs:label "Item weight"@en .
+
+<http://dpp.taltech.ee/MODDPP#ItemWidth>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#PhysicalDimension> ;
+  rdfs:label "Item width"@en .
+
+<http://dpp.taltech.ee/MODDPP#EnvironmentalImpact>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#MeasurableAttribute> ;
+  rdfs:label "Environmental impact"@en .
+
+<http://dpp.taltech.ee/MODDPP#PlasticWasteVolume>
+  a owl:Class ;
+  rdfs:subClassOf <http://dpp.taltech.ee/MODDPP#WasteVolume> ;
+  rdfs:label "Plastic waste volume"@en .
+
+<https://si-digital-framework.org/SI#MeasurementUnit>
+  a owl:Class ;
+  rdfs:label "Unit of measurement"@en .
+
+<http://dpp.taltech.ee/MODDPP#batch> a owl:NamedIndividual .
+<http://dpp.taltech.ee/MODDPP#unit> a owl:NamedIndividual .
+<http://dpp.taltech.ee/MODDPP#model> a owl:NamedIndividual .

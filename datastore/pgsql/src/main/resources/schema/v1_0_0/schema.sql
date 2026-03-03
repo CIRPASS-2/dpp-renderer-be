@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS dpp_data
+(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    upi VARCHAR(36) UNIQUE NOT NULL,
+    live_url VARCHAR (1000),
+    search_data JSON NOT NULL
+);

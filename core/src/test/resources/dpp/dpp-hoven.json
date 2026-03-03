@@ -1,0 +1,107 @@
+{
+  "product": {
+    "uniqueProductID": "urn:epc:id:sgtin:0614141.298765.001",
+    "name": "ThermoChef Pro 90",
+    "description": "Forno elettrico da incasso multifunzione con classe energetica A++",
+    "GTIN": "8801234567890",
+    "commodityCode": "8516600000",
+    "isEnergyRelated": true,
+    "productImage": "https://example.com/images/forno-001.jpg",
+
+    "productGroup": {
+      "codeSet": "https://ec.europa.eu/growth/tools-databases/tbt/",
+      "codeValue": "APPL-OVEN-ELECTRIC"
+    },
+
+    "manufacturerRef": "http://example.com/actor/manufacturer-delta",
+    "economicOperatorRef": "http://example.com/actor/operator-epsilon",
+
+    "dpp": {
+      "uniqueDPPID": "urn:uuid:f7e6d5c4-b3a2-4f1e-9d8c-7b6a5f4e3d2c",
+      "granularity": "product",
+      "status": "Active",
+      "schemaVersion": "1.7.0",
+      "validFrom": "2024-03-01T08:00:00Z",
+      "validUntil": "2044-03-01T08:00:00Z",
+      "lastUpdate": "2024-11-01T09:00:00Z",
+      "facilityID": "FAC-IT-TO-007",
+      "issuerRef": "http://example.com/actor/issuer-zeta"
+    },
+
+    "properties": [
+      {
+        "type": "Weight",
+        "dictionaryReference": "https://example.com/dict/weight",
+        "numericalValue": 32500,
+        "tolerance": 500,
+        "measurementUnit": "si:gram"
+      },
+      {
+        "type": "CarbonFootprint",
+        "dictionaryReference": "https://example.com/dict/carbon-footprint",
+        "numericalValue": 210.4,
+        "tolerance": null,
+        "measurementUnit": "si:kilogram-co2-equivalent"
+      },
+      {
+        "type": "EnergyConsumption",
+        "dictionaryReference": "https://example.com/dict/energy-consumption",
+        "numericalValue": 0.87,
+        "tolerance": null,
+        "measurementUnit": "si:kilowatt-hour"
+      },
+      {
+        "type": "EnergyEfficiencyClass",
+        "dictionaryReference": "https://example.com/dict/energy-efficiency-class",
+        "stringValue": "A++",
+        "tolerance": null,
+        "measurementUnit": null
+      },
+      {
+        "type": "CavityVolume",
+        "dictionaryReference": "https://example.com/dict/cavity-volume",
+        "numericalValue": 73,
+        "tolerance": null,
+        "measurementUnit": "si:litre"
+      },
+      {
+        "type": "MaxTemperature",
+        "dictionaryReference": "https://example.com/dict/max-temperature",
+        "numericalValue": 275,
+        "tolerance": 5,
+        "measurementUnit": "si:celsius"
+      },
+      {
+        "type": "RecyclingRate",
+        "dictionaryReference": "https://example.com/dict/recycling-rate",
+        "numericalValue": 85.0,
+        "tolerance": null,
+        "measurementUnit": "si:percent"
+      },
+      {
+        "type": "Durability",
+        "dictionaryReference": "https://example.com/dict/durability",
+        "numericalValue": 87600,
+        "tolerance": null,
+        "measurementUnit": "si:hour"
+      },
+      {
+        "type": "NoiseLevel",
+        "dictionaryReference": "https://example.com/dict/noise-level",
+        "numericalValue": 38,
+        "tolerance": null,
+        "measurementUnit": "si:decibel"
+      }
+    ],
+
+    "packagingDetail": {
+      "packagingType": "Cardboard box with EPE foam inserts",
+      "packagingDate": "2024-02-20T06:00:00Z"
+    },
+
+    "substancesOfConcern": [
+      "http://example.com/soc/glass-fibre-insulation",
+      "http://example.com/soc/nickel-heating-element"
+    ]
+  }
+}

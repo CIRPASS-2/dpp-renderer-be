@@ -1,0 +1,124 @@
+{
+  "@context": {
+    "@vocab": "http://dpp.taltech.ee/MODDPP#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "si": "https://si-digital-framework.org/SI#",
+    "name": "http://dpp.taltech.ee/MODDPP#itemName"
+  },
+  "@graph": [
+    {
+      "@id": "http://example.com/product/smartphone-001",
+      "@type": "Item",
+      "itemUID": "urn:epc:id:sgtin:0614141.112345.001",
+      "name": "EcoPhone X Pro",
+      "itemDescription": "Smartphone di fascia alta con materiali riciclati al 75%",
+      "globalTradeNumber": "8712345678901",
+      "tariffCode": "8517120000",
+      "isEnergyImpacting": true,
+      "itemPhoto": "https://example.com/images/smartphone-001.jpg",
+      "belongsToProductFamily": {
+        "@id": "http://example.com/classification/smartphones",
+        "@type": "CategoryCode",
+        "categoryCodeScheme": "https://ec.europa.eu/growth/tools-databases/tbt/",
+        "categoryCodeValue": "ELEC-PHONE-SMART"
+      },
+      "hasProducer": "http://example.com/actor/manufacturer-alpha",
+      "hasResponsibleOperator": "http://example.com/actor/operator-beta",
+      "ownsPassport": {
+        "@id": "http://example.com/dpp/smartphone-001-dpp",
+        "@type": "DigitalPassport",
+        "passportURI": "urn:uuid:a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+        "recordLevel": "unit",
+        "lifecycleState": "Active",
+        "specificationVersion": "1.7.0",
+        "effectiveFrom": {
+          "@type": "xsd:dateTimeStamp",
+          "@value": "2024-01-15T08:00:00Z"
+        },
+        "expiresOn": {
+          "@type": "xsd:dateTimeStamp",
+          "@value": "2034-01-15T08:00:00Z"
+        },
+        "modifiedAt": {
+          "@type": "xsd:dateTimeStamp",
+          "@value": "2024-11-20T14:30:00Z"
+        },
+        "siteIdentifier": "FAC-IT-MI-001",
+        "hasRegistrar": "http://example.com/actor/issuer-gamma"
+      },
+      "hasAttribute": [
+        {
+          "@id": "http://example.com/property/weight-001",
+          "@type": "ItemWeight",
+          "dataPointReference": "https://example.com/dict/weight",
+          "quantity": {
+            "@type": "xsd:decimal",
+            "@value": "189.5"
+          },
+          "permittedVariation": 2.0,
+          "hasUnit": {
+            "@id": "si:gram"
+          }
+        },
+        {
+          "@id": "http://example.com/property/carbon-footprint-001",
+          "@type": "GHGFootprint",
+          "dataPointReference": "https://example.com/dict/carbon-footprint",
+          "quantity": {
+            "@type": "xsd:decimal",
+            "@value": "45.8"
+          },
+          "hasUnit": {
+            "@id": "si:kilogram-co2-equivalent"
+          }
+        },
+        {
+          "@id": "http://example.com/property/recycling-rate-001",
+          "@type": "ReuseRate",
+          "dataPointReference": "https://example.com/dict/recycling-rate",
+          "quantity": {
+            "@type": "xsd:decimal",
+            "@value": "75.0"
+          },
+          "hasUnit": {
+            "@id": "si:percent"
+          }
+        },
+        {
+          "@id": "http://example.com/property/energy-consumption-001",
+          "@type": "PowerDraw",
+          "dataPointReference": "https://example.com/dict/energy-consumption",
+          "quantity": {
+            "@type": "xsd:decimal",
+            "@value": "12.5"
+          },
+          "hasUnit": {
+            "@id": "si:kilowatt-hour"
+          }
+        },
+        {
+          "@id": "http://example.com/property/durability-001",
+          "@type": "PerformanceIndicator",
+          "dataPointReference": "https://example.com/dict/durability",
+          "quantity": {
+            "@type": "xsd:decimal",
+            "@value": "8760"
+          },
+          "hasUnit": {
+            "@id": "si:hour"
+          }
+        }
+      ],
+      "hasPackagingInfo": {
+        "@id": "http://example.com/packaging/smartphone-001",
+        "@type": "PackagingInfo",
+        "containerType": "Recyclable cardboard box",
+        "packagingDate": {
+          "@type": "xsd:dateTime",
+          "@value": "2024-11-15T10:30:00Z"
+        }
+      },
+      "includesHazardousSubstance": "http://example.com/soc/lithium-battery"
+    }
+  ]
+}

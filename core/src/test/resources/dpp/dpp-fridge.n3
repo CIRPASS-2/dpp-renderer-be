@@ -1,0 +1,183 @@
+@prefix dpp: <http://dpp.taltech.ee/EUDPP#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix si: <https://si-digital-framework.org/SI#> .
+@prefix ex: <http://example.com/> .
+
+# Product: Refrigerator
+ex:product-fridge-004 a dpp:Product ;
+    dpp:uniqueProductID "urn:epc:id:sgtin:0614141.445678.004"^^xsd:anyURI ;
+    dpp:productName "CoolMax A+++ Double Door Fridge" ;
+    dpp:description "Frigorifero a doppia porta con classe energetica A+++ e tecnologia No Frost" ;
+    dpp:GTIN "8745678901234" ;
+    dpp:commodityCode "8418102000" ;
+    dpp:isEnergyRelated "true"^^xsd:boolean ;
+    dpp:productImage "https://example.com/images/fridge-004.jpg"^^xsd:anyURI .
+
+# Product Group
+ex:product-fridge-004 dpp:hasProductGroup ex:classification-refrigerators .
+
+ex:classification-refrigerators a dpp:ClassificationCode ;
+    dpp:codeSet "https://ec.europa.eu/growth/tools-databases/tbt/"^^xsd:anyURI ;
+    dpp:codeValue "APPL-COOL-FRIDGE-DD" .
+
+# Actors
+ex:product-fridge-004 dpp:hasManufacturer ex:actor-manufacturer-lambda .
+ex:product-fridge-004 dpp:hasEconomicOperator ex:actor-operator-mu .
+
+# DPP
+ex:product-fridge-004 dpp:hasDPP ex:dpp-fridge-004-dpp .
+
+ex:dpp-fridge-004-dpp a dpp:DPP ;
+    dpp:uniqueDPPID "urn:uuid:d4e5f6a7-b8c9-7d8e-1f2a-3b4c5d6e7f8a"^^xsd:anyURI ;
+    dpp:granularity "batch" ;
+    dpp:status "Active" ;
+    dpp:schemaVersion "1.7.0" ;
+    dpp:validFrom "2024-07-01T12:00:00Z"^^xsd:dateTimeStamp ;
+    dpp:validUntil "2039-07-01T12:00:00Z"^^xsd:dateTimeStamp ;
+    dpp:lastUpdate "2024-12-10T09:30:00Z"^^xsd:dateTimeStamp ;
+    dpp:facilityID "FAC-PL-WA-004" ;
+    dpp:hasIssuer ex:actor-issuer-nu ;
+    dpp:hasBackUpCopyHost ex:actor-backup-host-003 ;
+    dpp:linkToPreviousDPP "urn:uuid:a1a1a1a1-b2b2-c3c3-d4d4-e5e5e5e5e5e5"^^xsd:anyURI ;
+    dpp:appliesToProduct ex:product-fridge-004 .
+
+# Properties - Dimensions
+ex:product-fridge-004 dpp:hasProperty ex:property-weight-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-length-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-width-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-height-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-volume-004 .
+
+ex:property-weight-004 a dpp:Weight ;
+    dpp:dictionaryReference "https://example.com/dict/weight" ;
+    dpp:numericalValue "82.5"^^xsd:decimal ;
+    dpp:tolerance "2.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:kilogram .
+
+ex:property-length-004 a dpp:Length ;
+    dpp:dictionaryReference "https://example.com/dict/length" ;
+    dpp:numericalValue "700.0"^^xsd:decimal ;
+    dpp:tolerance "5.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:millimeter .
+
+ex:property-width-004 a dpp:Width ;
+    dpp:dictionaryReference "https://example.com/dict/width" ;
+    dpp:numericalValue "750.0"^^xsd:decimal ;
+    dpp:tolerance "5.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:millimeter .
+
+ex:property-height-004 a dpp:Height ;
+    dpp:dictionaryReference "https://example.com/dict/height" ;
+    dpp:numericalValue "1850.0"^^xsd:decimal ;
+    dpp:tolerance "10.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:millimeter .
+
+ex:property-volume-004 a dpp:Volume ;
+    dpp:dictionaryReference "https://example.com/dict/volume" ;
+    dpp:numericalValue "450.0"^^xsd:decimal ;
+    dpp:tolerance "5.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:liter .
+
+# Environmental Properties
+ex:product-fridge-004 dpp:hasProperty ex:property-carbon-footprint-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-energy-consumption-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-recycled-materials-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-recycling-rate-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-emission-air-004 .
+
+ex:property-carbon-footprint-004 a dpp:CarbonFootprint ;
+    dpp:dictionaryReference "https://example.com/dict/carbon-footprint" ;
+    dpp:numericalValue "580.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:kilogram-co2-equivalent .
+
+ex:property-energy-consumption-004 a dpp:EnergyConsumption ;
+    dpp:dictionaryReference "https://example.com/dict/energy-consumption" ;
+    dpp:numericalValue "150.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:kilowatt-hour-per-year .
+
+ex:property-recycled-materials-004 a dpp:RecycledMaterialsUse ;
+    dpp:dictionaryReference "https://example.com/dict/recycled-materials" ;
+    dpp:numericalValue "38.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:percent .
+
+ex:property-recycling-rate-004 a dpp:RecyclingRate ;
+    dpp:dictionaryReference "https://example.com/dict/recycling-rate" ;
+    dpp:numericalValue "85.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:percent .
+
+ex:property-emission-air-004 a dpp:EmissionToAir ;
+    dpp:dictionaryReference "https://example.com/dict/emission-air" ;
+    dpp:numericalValue "0.5"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:gram-per-hour .
+
+# Quality Properties
+ex:product-fridge-004 dpp:hasProperty ex:property-durability-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-reliability-004 .
+
+ex:property-durability-004 a dpp:Durability ;
+    dpp:dictionaryReference "https://example.com/dict/durability" ;
+    dpp:numericalValue "175200.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:hour .
+
+ex:property-reliability-004 a dpp:Reliability ;
+    dpp:dictionaryReference "https://example.com/dict/reliability" ;
+    dpp:numericalValue "100000.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:hour .
+
+# Circular Economy Indicators
+ex:product-fridge-004 dpp:hasProperty ex:property-recoverable-rate-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-product-packaging-ratio-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-packaging-waste-004 .
+
+ex:property-recoverable-rate-004 a dpp:RecoverableRate ;
+    dpp:dictionaryReference "https://example.com/dict/recoverable-rate" ;
+    dpp:numericalValue "92.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:percent .
+
+ex:property-product-packaging-ratio-004 a dpp:ProductToPackagingRatio ;
+    dpp:dictionaryReference "https://example.com/dict/product-packaging-ratio" ;
+    dpp:numericalValue "18.5"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:ratio .
+
+ex:property-packaging-waste-004 a dpp:PackagingWasteAmount ;
+    dpp:dictionaryReference "https://example.com/dict/packaging-waste" ;
+    dpp:numericalValue "4.5"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:kilogram .
+
+# Digital Instructions
+ex:product-fridge-004 dpp:hasProperty ex:property-instruction-manual-004 .
+ex:product-fridge-004 dpp:hasProperty ex:property-installation-video-004 .
+
+ex:property-instruction-manual-004 a dpp:DigitalInstruction ;
+    dpp:dictionaryReference "https://example.com/dict/instruction-manual" ;
+    dpp:contentType "application/pdf" ;
+    dpp:value "https://example.com/manuals/fridge-004-manual.pdf" ;
+    dpp:webLink "https://example.com/support/fridge-004-manual"^^xsd:anyURI .
+
+ex:property-installation-video-004 a dpp:DigitalInstruction ;
+    dpp:dictionaryReference "https://example.com/dict/installation-video" ;
+    dpp:contentType "video/mp4" ;
+    dpp:value "https://example.com/videos/fridge-004-installation.mp4" ;
+    dpp:webLink "https://example.com/support/fridge-004-video"^^xsd:anyURI .
+
+# Packaging Details
+ex:product-fridge-004 dpp:hasPackagingDetail ex:packaging-fridge-004 .
+
+ex:packaging-fridge-004 a dpp:PackagingDetail ;
+    dpp:packagingType "Expanded polystyrene and corrugated cardboard" ;
+    dpp:packagingDate "2024-11-28T13:45:00Z"^^xsd:dateTime .
+
+# Substances of Concern
+ex:product-fridge-004 dpp:containsSubstanceOfConcern ex:soc-refrigerant-r600a .
+ex:product-fridge-004 dpp:containsSubstanceOfConcern ex:soc-polyurethane-foam .
+
+# Spare Parts
+ex:product-fridge-004-compressor a dpp:Product ;
+    dpp:productName "Compressor Unit for CoolMax Fridge" ;
+    dpp:isSparePartOf ex:product-fridge-004 .
+
+ex:product-fridge-004-thermostat a dpp:Product ;
+    dpp:productName "Digital Thermostat for CoolMax Fridge" ;
+    dpp:isSparePartOf ex:product-fridge-004 .

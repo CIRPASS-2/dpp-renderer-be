@@ -1,0 +1,141 @@
+@prefix dpp: <http://dpp.taltech.ee/EUDPP#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix si: <https://si-digital-framework.org/SI#> .
+@prefix ex: <http://example.com/> .
+
+# Product: Industrial Battery
+ex:product-battery-003 a dpp:Product ;
+    dpp:uniqueProductID "urn:epc:id:sgtin:0614141.334567.003"^^xsd:anyURI ;
+    dpp:productName "PowerMax Industrial Battery 500Ah" ;
+    dpp:description "Batteria industriale al litio-ferro-fosfato per sistemi di accumulo energia" ;
+    dpp:GTIN "8734567890123" ;
+    dpp:commodityCode "8506500000" ;
+    dpp:isEnergyRelated "true"^^xsd:boolean ;
+    dpp:productImage "https://example.com/images/battery-003.jpg"^^xsd:anyURI .
+
+# Product Group
+ex:product-battery-003 dpp:hasProductGroup ex:classification-industrial-batteries .
+
+# Actors
+ex:product-battery-003 dpp:hasManufacturer ex:actor-manufacturer-theta .
+ex:product-battery-003 dpp:hasEconomicOperator ex:actor-operator-iota .
+
+# DPP
+ex:product-battery-003 dpp:hasDPP ex:dpp-battery-003-dpp .
+
+# Properties
+ex:product-battery-003 dpp:hasProperty ex:property-weight-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-length-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-width-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-height-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-volume-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-carbon-footprint-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-material-footprint-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-recycling-rate-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-energy-consumption-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-durability-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-water-consumption-003 .
+ex:product-battery-003 dpp:hasProperty ex:property-hazardous-waste-003 .
+
+# Packaging
+ex:product-battery-003 dpp:hasPackagingDetail ex:packaging-battery-003 .
+
+# Substances of Concern
+ex:product-battery-003 dpp:containsSubstanceOfConcern ex:soc-lithium .
+ex:product-battery-003 dpp:containsSubstanceOfConcern ex:soc-cobalt .
+ex:product-battery-003 dpp:containsSubstanceOfConcern ex:soc-nickel .
+
+# Components
+ex:product-battery-003 dpp:isComponentOf ex:product-energy-storage-system-001 .
+
+# Classification Code
+ex:classification-industrial-batteries a dpp:ClassificationCode ;
+    dpp:codeSet "https://ec.europa.eu/growth/tools-databases/tbt/"^^xsd:anyURI ;
+    dpp:codeValue "BATT-IND-LFP" .
+
+# DPP
+ex:dpp-battery-003-dpp a dpp:DPP ;
+    dpp:uniqueDPPID "urn:uuid:c3d4e5f6-a7b8-6c7d-0e1f-2a3b4c5d6e7f"^^xsd:anyURI ;
+    dpp:granularity "model" ;
+    dpp:status "Active" ;
+    dpp:schemaVersion "1.7.0" ;
+    dpp:validFrom "2024-05-20T10:00:00Z"^^xsd:dateTimeStamp ;
+    dpp:validUntil "2044-05-20T10:00:00Z"^^xsd:dateTimeStamp ;
+    dpp:lastUpdate "2024-12-05T11:15:00Z"^^xsd:dateTimeStamp ;
+    dpp:facilityID "FAC-CN-SZ-003" ;
+    dpp:hasIssuer ex:actor-issuer-kappa ;
+    dpp:hasBackUpCopyHost ex:actor-backup-host-002 ;
+    dpp:appliesToProduct ex:product-battery-003 .
+
+# Properties
+ex:property-weight-003 a dpp:Weight ;
+    dpp:dictionaryReference "https://example.com/dict/weight" ;
+    dpp:numericalValue "45.8"^^xsd:decimal ;
+    dpp:tolerance "0.5"^^xsd:double ;
+    dpp:hasMeasurementUnit si:kilogram .
+
+ex:property-length-003 a dpp:Length ;
+    dpp:dictionaryReference "https://example.com/dict/length" ;
+    dpp:numericalValue "650.0"^^xsd:decimal ;
+    dpp:tolerance "5.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:millimeter .
+
+ex:property-width-003 a dpp:Width ;
+    dpp:dictionaryReference "https://example.com/dict/width" ;
+    dpp:numericalValue "350.0"^^xsd:decimal ;
+    dpp:tolerance "5.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:millimeter .
+
+ex:property-height-003 a dpp:Height ;
+    dpp:dictionaryReference "https://example.com/dict/height" ;
+    dpp:numericalValue "220.0"^^xsd:decimal ;
+    dpp:tolerance "3.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:millimeter .
+
+ex:property-volume-003 a dpp:Volume ;
+    dpp:dictionaryReference "https://example.com/dict/volume" ;
+    dpp:numericalValue "50.05"^^xsd:decimal ;
+    dpp:tolerance "1.0"^^xsd:double ;
+    dpp:hasMeasurementUnit si:liter .
+
+ex:property-carbon-footprint-003 a dpp:CarbonFootprint ;
+    dpp:dictionaryReference "https://example.com/dict/carbon-footprint" ;
+    dpp:numericalValue "1250.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:kilogram-co2-equivalent .
+
+ex:property-material-footprint-003 a dpp:MaterialFootprint ;
+    dpp:dictionaryReference "https://example.com/dict/material-footprint" ;
+    dpp:numericalValue "78.5"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:kilogram .
+
+ex:property-recycling-rate-003 a dpp:RecyclingRate ;
+    dpp:dictionaryReference "https://example.com/dict/recycling-rate" ;
+    dpp:numericalValue "95.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:percent .
+
+ex:property-energy-consumption-003 a dpp:EnergyConsumption ;
+    dpp:dictionaryReference "https://example.com/dict/energy-consumption" ;
+    dpp:numericalValue "500.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:ampere-hour .
+
+ex:property-durability-003 a dpp:Durability ;
+    dpp:dictionaryReference "https://example.com/dict/durability" ;
+    dpp:numericalValue "6000.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:cycle .
+
+ex:property-water-consumption-003 a dpp:WaterConsumption ;
+    dpp:dictionaryReference "https://example.com/dict/water-consumption" ;
+    dpp:numericalValue "850.0"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:liter .
+
+ex:property-hazardous-waste-003 a dpp:HazardousWasteAmount ;
+    dpp:dictionaryReference "https://example.com/dict/hazardous-waste" ;
+    dpp:numericalValue "2.3"^^xsd:decimal ;
+    dpp:hasMeasurementUnit si:kilogram .
+
+# Packaging Details
+ex:packaging-battery-003 a dpp:PackagingDetail ;
+    dpp:packagingType "Heavy-duty wooden crate with foam inserts" ;
+    dpp:packagingDate "2024-12-01T08:30:00Z"^^xsd:dateTime .
