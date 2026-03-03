@@ -1,4 +1,4 @@
-name: 'DPP Data Extractor Test'
+name: 'DPP Renderer Be Test'
 
 on:
   pull_request:

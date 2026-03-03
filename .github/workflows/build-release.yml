@@ -1,4 +1,4 @@
-name: 'DPP Metadata Registry Build Release'
+name: 'DPP Renderer Be Build Release'
 
 on:
   push:
